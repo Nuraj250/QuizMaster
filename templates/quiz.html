@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz | AI QuizMaster{% endblock %}
+
+{% block content %}
+<h2>Question {{ number }}</h2>
+
+<form method="POST">
+  <p><strong>{{ question['prompt'] }}</strong></p>
+
+  {% for key, option in question['options'].items() %}
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="option" value="{{ key }}" required>
+    <label class="form-check-label">{{ key }}. {{ option }}</label>
+  </div>
+  {% endfor %}
+
+  <button type="submit" class="btn btn-success mt-3">Next</button>
+</form>
+{% endblock %}

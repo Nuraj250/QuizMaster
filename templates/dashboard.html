@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | AI QuizMaster{% endblock %}
+
+{% block content %}
+<h2>Dashboard</h2>
+<form method="POST" action="{{ url_for('start_quiz') }}">
+  <div class="mb-3">
+    <label class="form-label">Select Category</label>
+    <select name="category" class="form-select" required>
+      <option value="Science">Science</option>
+      <option value="History">History</option>
+      <option value="Technology">Technology</option>
+      <option value="General Knowledge">General Knowledge</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Start Quiz</button>
+</form>
+{% endblock %}

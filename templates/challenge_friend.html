@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Challenge a Friend | AI QuizMaster{% endblock %}
+
+{% block content %}
+<h2>Challenge a Friend</h2>
+
+<form method="POST">
+  <div class="mb-3">
+    <label class="form-label">Friend's Email</label>
+    <input type="email" class="form-control" name="email" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Send Challenge</button>
+</form>
+{% endblock %}

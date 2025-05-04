@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Leaderboard | AI QuizMaster{% endblock %}
+
+{% block content %}
+<h2>Leaderboard</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Username</th>
+      <th>Category</th>
+      <th>Score</th>
+      <th>Time (s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for idx, entry in enumerate(leaderboard, start=1) %}
+    <tr>
+      <td>{{ idx }}</td>
+      <td>{{ entry.username }}</td>
+      <td>{{ entry.category }}</td>
+      <td>{{ entry.score }}</td>
+      <td>{{ entry.duration }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
